@@ -36,11 +36,15 @@ const init = () => {
 
       const fill_text =
         n1 === random1
-          ? `恭喜您！就是 ${n1}, 共猜了 ${count1} 次`
+          ? `恭喜您！就是${n1}, 共猜了${count1}次`
           : n1 > random1
             ? "大！， 再试小一点的数"
             : "小！， 再试大一点的数";
       context.fillText(fill_text, 2 * offset, 3.5 * offset);
+
+      if (n1 === random1) {
+        newStart();
+      }
     }
 
     const newStart = () => {
@@ -67,7 +71,6 @@ const init = () => {
       })
       const n = obj.number;
       drawBoard(n, 310, 60);
-      newStart();
     })
 
   };
